@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
+
+use function Ramsey\Uuid\v1;
 
 class ProductController extends Controller
 {
@@ -13,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $date = Product::all();
+        return view('products.index', compact('date'));
     }
 
     /**
