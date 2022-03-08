@@ -12177,3 +12177,15 @@ main .container {
   width: 1200px;
 }
 
+main .container .card {
+  margin: 10px 0;
+}
+
+.details .container {
+  width: 1200px;
+}
+
+.details .container li {
+  padding: 10px 0;
+}
+

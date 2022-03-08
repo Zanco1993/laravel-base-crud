@@ -11,8 +11,8 @@
     <div>
         @yield('header')
     </div>
-    <main>
+    <div>
         @yield('main')
-    </main>
+    </div>
 </body>
 </html>
