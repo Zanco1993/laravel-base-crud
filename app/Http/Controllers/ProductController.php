@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
@@ -38,7 +38,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $new_fumetto = new Product();
+        $new_fumetto->title = $data["title"];
+        $new_fumetto->description = $data["description"];
+        $new_fumetto->thumb = $data["thumb"];
+        $new_fumetto->price = $data["price"];
+        $new_fumetto->series = $data["series"];
+        $new_fumetto->sale_date = $data["sale_date"];
+
+    
+        $new_fumetto->save();
+    
+        return redirect()->route('products.show', $new_fumetto->id);
     }
 
     /**

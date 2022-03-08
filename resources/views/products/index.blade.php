@@ -8,6 +8,9 @@
 
 @section('main')
 <main>
+    <div class="text-center">
+        <a href="{{ route('products.create') }}" class="btn btn-primary">Aggiungi</a>
+    </div>
 
     {{-- @dd($date) --}}
     <div class="container">
