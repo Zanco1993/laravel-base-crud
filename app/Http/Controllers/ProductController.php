@@ -47,6 +47,7 @@ class ProductController extends Controller
         $new_fumetto->price = $data["price"];
         $new_fumetto->series = $data["series"];
         $new_fumetto->sale_date = $data["sale_date"];
+        $new_fumetto->type = $data["type"];
 
     
         $new_fumetto->save();
