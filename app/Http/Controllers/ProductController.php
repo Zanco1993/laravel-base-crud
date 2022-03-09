@@ -52,12 +52,18 @@ class ProductController extends Controller
         // $new_fumetto->sale_date = $data["sale_date"];
         // $new_fumetto->type = $data["type"];
 
+        // $new_fumetto->save();
         // 2° metodo con fill aggiungendo nel model protected $fillable=['nome_chiavi']
 
         $new_fumetto->fill($data);
+        $new_fumetto->save();
+
+        // 3°metodo - questo motodo fa istanza, fill, save
+        //            bisogna poi aggiunggere nel model il protected $fillable=['nome_chiavi']
+        
+        // $new_fumetto->Product::create($data);
 
     
-        $new_fumetto->save();
     
         return redirect()->route('products.show', $new_fumetto->id);
     }
