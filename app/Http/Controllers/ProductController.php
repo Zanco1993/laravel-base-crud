@@ -41,13 +41,20 @@ class ProductController extends Controller
         $data = $request->all();
 
         $new_fumetto = new Product();
-        $new_fumetto->title = $data["title"];
-        $new_fumetto->description = $data["description"];
-        $new_fumetto->thumb = $data["thumb"];
-        $new_fumetto->price = $data["price"];
-        $new_fumetto->series = $data["series"];
-        $new_fumetto->sale_date = $data["sale_date"];
-        $new_fumetto->type = $data["type"];
+
+        // 1°metodo
+
+        // $new_fumetto->title = $data["title"];
+        // $new_fumetto->description = $data["description"];
+        // $new_fumetto->thumb = $data["thumb"];
+        // $new_fumetto->price = $data["price"];
+        // $new_fumetto->series = $data["series"];
+        // $new_fumetto->sale_date = $data["sale_date"];
+        // $new_fumetto->type = $data["type"];
+
+        // 2° metodo con fill aggiungendo nel model protected $fillable=['nome_chiavi']
+
+        $new_fumetto->fill($data);
 
     
         $new_fumetto->save();
