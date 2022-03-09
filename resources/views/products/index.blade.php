@@ -22,7 +22,11 @@
                     <h5 class="card-title">{{ $item['title'] }}</h5>
                     <a href="{{ route('products.show', $item->id) }}" class="btn btn-primary">More info</a>
                     <a href="{{ route('products.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                    
+                    {{-- importiamo deleteForm che andrà ad eliminare il campo specifico grazie all'ID --}}
+                    @include('partials.deleteForm', [
+                        'id' => $item->id,
+                        'route' => 'products.destroy'
+                    ])
                 </div>
             </div>
             @endforeach
