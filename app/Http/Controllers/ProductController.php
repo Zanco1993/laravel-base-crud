@@ -119,4 +119,5 @@ class ProductController extends Controller
         $destroyProduct->delete($destroyProduct);
         return redirect()->route('products.index');
     }
+
 }
