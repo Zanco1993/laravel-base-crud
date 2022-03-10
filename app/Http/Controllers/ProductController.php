@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductStoreRequest;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -36,9 +37,9 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
         $new_fumetto = new Product();
 
@@ -99,9 +100,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductStoreRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validate();
         $editProduct = Product::findOrFail($id);
         $editProduct->update($data);
         return redirect()->route('products.index');
